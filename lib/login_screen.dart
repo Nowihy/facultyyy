@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   },
                                   obscureText: false,
                                   decoration: ThemeHelper().textInputDecoration(
-                                      'Email', 'اكتب البريد الالكتروني'),
+                                      'Email', ' اكتب البريد الالكتروني'),
                                 ),
                               ),
                               Container(
