@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shubrafaculty/NavBar.dart';
-import 'package:shubrafaculty/show%20request.dart';
 import 'package:shubrafaculty/themeees.dart';
 import 'package:shubrafaculty/utils.dart';
-import 'package:shubrafaculty/validation.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String FacultyName = 'Login';

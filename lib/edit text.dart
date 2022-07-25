@@ -15,6 +15,9 @@ class edit_text extends StatelessWidget{
               hintText: title,
               hintStyle: TextStyle(fontSize: 18),
             ),
+            onChanged: (text) {
+              title = text;
+            },
           ),
         )
       ],
