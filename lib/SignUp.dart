@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:shubrafaculty/Add_problem_to_Firestore.dart' as AppUser;
-import 'package:shubrafaculty/fireStore_utils.dart';
+import 'package:shubrafaculty/Add_User_to_Firestore.dart';
+import 'package:shubrafaculty/fireStore_utils_for_User.dart';
 import 'package:shubrafaculty/utils.dart';
 
 class Register extends StatefulWidget {
@@ -133,7 +133,7 @@ class _RegisterState extends State<Register> {
       var result = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: Email, password: Password);
       if (result.user != null) {
-        AddUserToFireStore(AppUser.User(
+        AddUserToFireStore(AddUser(
           Email: Email,
           Id: result.user!.uid,
           Name: Name,

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class User {
+class AddUser {
   static String collectionName = 'users';
 
   String Email;
@@ -15,7 +15,7 @@ class User {
 
   // String type ;
   // String description ;
-  User({
+  AddUser({
     required this.Email,
     required this.Id,
     required this.Name,
@@ -24,15 +24,13 @@ class User {
     //required this.type,required this.description
   });
 
-  User.fromJson(Map<String, dynamic> json)
+  AddUser.fromJson(Map<String, dynamic> json)
       : this(
           Email: json['Email'] as String,
           Id: json['Id'] as String,
           Name: json['Name'] as String,
           Password: json['Password'] as String,
           Role: json['Role'] as String,
-          // type: json['type'] as String,
-          // description: json['desription'] as String
         );
 
   Map<String, dynamic> toJson() {
@@ -43,16 +41,14 @@ class User {
       'Password': Password,
       'Role': Role,
 
-      //'type' : type,
-      //'description' : description
     };
   }
 
-  static CollectionReference<User> withConverter() {
+  static CollectionReference<AddUser> withConverter() {
     return FirebaseFirestore.instance
         .collection(collectionName)
-        .withConverter<User>(
-          fromFirestore: (snapshot, _) => User.fromJson(snapshot.data()!),
+        .withConverter<AddUser>(
+          fromFirestore: (snapshot, _) => AddUser.fromJson(snapshot.data()!),
           toFirestore: (Users, _) => Users.toJson(),
         );
   }
